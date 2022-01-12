@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  web:
+    build: ./hospitalserver
+    environment:
+      MYENV: EXAMPLE
+    volumes:
+      - .:/code
+  web_migrate:
+    extends:
+      service: web
+    command: python manage.py migrate
+  web_run:
+    extends:
+      service: web
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./hospitalfe
+    command: ["npm", "start"]
+    volumes:
+      - ./frontend:/app/frontend
+      - node-modules:/app/frontend/node_modules
+    ports:
+      - "3000:3000"
+
+volumes:
+  node-modules:

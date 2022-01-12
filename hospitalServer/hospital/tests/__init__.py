@@ -1,0 +1,6 @@
+from .hospital_api_tests import HospitalAPITests
+from .hospital_unit_tests import HospitalUnitTests
+from .appointment_api_tests import AppointmentAPITests
+from .patient_unit_tests import PatientUnitTests
+from .appointment_unit_tests import AppointmentUnitTests
+from .doctor_unit_tests import DoctorUnitTests

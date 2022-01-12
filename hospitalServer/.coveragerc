@@ -1,0 +1,13 @@
+[run]
+source =
+        hospital
+
+[paths]
+source =
+    src/hospital
+
+[report]
+show_missing = true
+precision = 2
+omit =
+    */tests/*
